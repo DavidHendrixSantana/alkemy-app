@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\User;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Http\Resources\ProjectResource;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Auth;
+
 
 class ProjectController extends Controller
 {
@@ -18,7 +21,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return ProjectResource::collection(Project::all());
+        $user = Auth::user();
+        return ProjectResource::collection(Project::where('user_id',$user->id)->paginate(6));
 
     }
 
@@ -31,6 +35,8 @@ class ProjectController extends Controller
     public function store(StoreProjectRequest $request)
     {
         $data = $request->validated();
+        $data['slug'] = Str::slug($data['title']);
+
 
         //validate if image was given
         if(isset($data['image'])){
@@ -137,5 +143,10 @@ class ProjectController extends Controller
         file_put_contents($relativePath, $image);
 
         return $relativePath;
+    }
+
+    public function getUsers(){
+        $users = User::all();
+        return $users;
     }
 }
