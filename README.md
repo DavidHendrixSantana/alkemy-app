@@ -28,7 +28,7 @@ possible compatibility issues in the composer.json dependecies*/)
 <br>
 2.-Then compile the project with npm run dev
 
-
+This project was developed with laravel 9 and php 8.1.10 
 
 
 
