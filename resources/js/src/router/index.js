@@ -1,5 +1,3 @@
-
-
 import {createRouter, createWebHistory} from "vue-router"
 import store from '../store'
 import AuthLayout from '../components/AuthLayout.vue'
@@ -9,6 +7,8 @@ import DefaultLayout from '../components/DefaultLayout.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Projects from '../views/Projects.vue'
 import ProjectView from '../views/ProjectView.vue'
+
+
 
 
 
@@ -44,6 +44,7 @@ const routes = [
             },
         ]
     },
+
 ]
 
 const router = createRouter({

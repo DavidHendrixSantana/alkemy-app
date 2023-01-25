@@ -87,21 +87,6 @@ const store = createStore({
             } 
             )
         },
-        getProjectBySlug({commit},slug){
-            commit("setCurrentProjectLoading", true)
-            return axiosClient
-            .get(`/project-by-slug/${slug}`)
-            .then((res)=>{
-                commit("setCurrentProject", res.data)
-                commit("setCurrentProjectLoading", false)
-
-            }).catch((err)=>{
-                commit("setCurrentProjectLoading", false)
-                throw err
-
-            })
-
-        },
 
         register({commit}, user){
             return axiosClient.post('/register',user)
@@ -125,7 +110,8 @@ const store = createStore({
                 commit('logout')
                 return response
             })
-        }
+        },
+
 
     },
     mutations:{
