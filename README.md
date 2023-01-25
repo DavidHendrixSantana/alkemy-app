@@ -13,7 +13,7 @@ possible compatibility issues in the composer.json dependecies*/)
 <br>
 4.-Create database
 <br>
-5.-Copy .env.example into .env file and adjust parameters
+5.-Copy .env.example into <b>.env</b> file and adjust parameters
 <br>
 6.-Run the migrations php artisan migrate
 <br>
