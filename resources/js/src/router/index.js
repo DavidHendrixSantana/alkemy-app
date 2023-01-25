@@ -38,6 +38,8 @@ import Register from '../views/Register.vue'
 import DefaultLayout from '../components/DefaultLayout.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Projects from '../views/Projects.vue'
+import ProjectView from '../views/ProjectView.vue'
+
 
 
 const routes = [
@@ -49,8 +51,8 @@ const routes = [
         children:[
             {path:'/dashboard', name:'Dashboard', component:Dashboard},
             {path:'/projects', name:'Projects', component:Projects},
-            // {path:'/projects/create',name: "ProjectCreate", component: ProjectView},
-            // {path:'/projects/:id',name: "ProjectView", component: ProjectView},
+            {path:'/projects/create',name: "ProjectCreate", component: ProjectView},
+            {path:'/projects/:id',name: "ProjectView", component: ProjectView},
         ]
     },
     {
