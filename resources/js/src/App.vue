@@ -1,8 +1,9 @@
 <template>
-  <h1>Hello app</h1>
+  <router-view></router-view>
+
 </template>
 
-<script setup>
+<script >
 
 </script>
 
