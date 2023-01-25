@@ -23,7 +23,7 @@ class ProjectController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return ProjectResource::collection(DB::table('projects')->paginate(6));
+        return ProjectResource::collection(DB::table('projects')->orderByDesc('created_at')->paginate(6));
 
     }
 

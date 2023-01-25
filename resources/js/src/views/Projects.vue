@@ -1,5 +1,5 @@
 <template>
-<PageComponent title="Projects">
+<PageComponent title="Proyectos">
   <template v-slot:header>
 
     <div v-if="projects.loading" class="flex justify-center">Loading...</div>
@@ -79,7 +79,6 @@ function  getForPage(ev,link){
   if(!link.url || link.active){
     return
   }
-  console.log(link.url)
   store.dispatch('getProjects', {url: link.url})
 }
 
