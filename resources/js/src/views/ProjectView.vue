@@ -13,7 +13,7 @@
         <!-- Image -->
           <div>
             <label class="block text-sm font-medium text-gray-700">
-              Image
+              Imagen
             </label>
             <div class="mt-1 flex items-center">
               <img class="w-64 h-48 object-cover" v-if="model.image_url" :src="model.image_url" :alt="model.image_url" >
@@ -33,7 +33,7 @@
                   @change="onImageChoose"
                   class="absolute left-0 top-0 right-0 bottom-0 opacity-0 cursor-pointer"
                 />
-                Change
+                Cambiar
               </button>
             </div>
           </div>
@@ -52,7 +52,7 @@
               autocomplete="project_slug"
               class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
             />
-            <span v-if="errorMsg.title">
+            <span v-if="errorMsg.title" class="text-red-500">
               El campo titulo es requerido.
             </span>
           </div>
@@ -89,7 +89,7 @@
                 <option v-for="user in users" :key="user.id" :value="user.id" :selected="model.id ? model.user_id : '' ">{{user.name}}</option>
               </select>
             </div>
-            <span v-if="errorMsg.user_id">
+            <span v-if="errorMsg.user_id" class="text-red-500">
               El campo responsable es requerido.
             </span>
           </div>
@@ -107,7 +107,7 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
       </svg>
 
-      Delete Project
+      Eliminar Proyecto
       </button>
 
           <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white
@@ -116,7 +116,7 @@
   <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3.75V16.5L12 14.25 7.5 16.5V3.75m9 0H18A2.25 2.25 0 0120.25 6v12A2.25 2.25 0 0118 20.25H6A2.25 2.25 0 013.75 18V6A2.25 2.25 0 016 3.75h1.5m9 0h-9" />
 </svg>
 
-            Save
+            Guardar
           </button>
         </div>
         </div>
