@@ -24,7 +24,7 @@
     <ProjectListItem  v-for="project in projects.data" :key="project.id" :project="project" @delete="deleteProject(project)"/>
 
     </div>
-    <div v-if="projects.data.lenght >2" class="flex justify-center mt-5">
+    <div v-if="projects.data != ''" class="flex justify-center mt-5">
       <nav class="relative z-0 inline-flex justify-center rounded-md shadow-sm" aria-label="Pagination">
         <a
         v-for="(link,i) of projects.links"

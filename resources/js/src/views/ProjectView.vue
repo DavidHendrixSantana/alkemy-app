@@ -85,7 +85,7 @@
             </label>
             <div class="mt-1">
               <select name="user_id" v-model="model.user_id" id="user_id" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
->               <option value="">Seleecciona una opción</option>
+>               <option  value="">Selecciona una opción</option>
                 <option v-for="user in users" :key="user.id" :value="user.id" :selected="model.id ? model.user_id : '' ">{{user.name}}</option>
               </select>
             </div>
@@ -144,7 +144,7 @@ let model= ref({
   title:"",
   image:null,
   description:null,
-  user_id:null,
+  user_id:'',
   status:1,
   image_url:null
 })

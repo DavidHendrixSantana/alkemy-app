@@ -30,12 +30,12 @@
           </div>
         </div>
 
-        <div class="flex items-center justify-between">
-          <div class="flex items-center">
-            <input id="remember" name="remember" type="checkbox"  v-model="user.remember" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
-            <label for="remember" class="ml-2 block text-sm text-gray-900">Recuerdame</label>
-          </div>
-
+        <div class=" items-center justify-between">
+        
+            <label for="remember" class="ml-2 block text-md text-gray-900">Default credentials   </label>
+            <label for="remember" class="ml-2 block text-sm text-blue-900">CORREO: admintest@admin.com  </label>
+            <label for="remember" class="ml-2 block text-sm text-blue-900">PASSWORD : password </label>
+     
 
         </div>
 
