@@ -1,6 +1,6 @@
 <template>
 <div  class="flex flex-col py-4 px-6 shadow-md bg-white hover:bg-gray-50 h-[470px]" >
-      <img :src="project.image_url != null ? project.image_url : '/images/image-not-found.png'" :alt="project.image_url ? project.image_url : 'Not found'" class="w-full h-48 object-cover">
+      <img :src="project.image_url != null ? project.image_url : 'image-not-found.png'" :alt="project.image_url ? project.image_url : 'Not found'" class="w-full h-48 object-cover">
       <h4 class="mt-4 text-lg font-bold" >{{project.title}}</h4>
       <div v-html="project.description" class="overflow-hidden flex-1"></div>
       <div class="flex justify-between items-center mt-3">

@@ -10,6 +10,7 @@ use App\Http\Resources\ProjectResource;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class ProjectController extends Controller
@@ -17,12 +18,12 @@ class ProjectController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \App\Http\Resources\ProjectResource;
      */
     public function index()
     {
         $user = Auth::user();
-        return ProjectResource::collection(Project::where('user_id',$user->id)->paginate(6));
+        return ProjectResource::collection(DB::table('projects')->paginate(6));
 
     }
 

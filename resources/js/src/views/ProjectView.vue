@@ -42,7 +42,7 @@
       <!-- Title -->
           <div>
             <label for="title" class="block text-sm font-medium text-gray-700"
-              >Title</label
+              >Titulo</label
             >
             <input
               type="text"
@@ -52,6 +52,9 @@
               autocomplete="project_slug"
               class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
             />
+            <span v-if="errorMsg.title">
+              El campo titulo es requerido.
+            </span>
           </div>
           <!--/ Title -->
 
@@ -59,7 +62,7 @@
          <!-- Description -->
           <div>
             <label for="about" class="block text-sm font-medium text-gray-700">
-              Description
+              Descripción
             </label>
             <div class="mt-1">
               <textarea
@@ -78,7 +81,7 @@
          <!-- responsable -->
           <div>
             <label for="about" class="block text-sm font-medium text-gray-700">
-              Responsible
+              Responsable
             </label>
             <div class="mt-1">
               <select name="user_id" v-model="model.user_id" id="user_id" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
@@ -86,6 +89,9 @@
                 <option v-for="user in users" :key="user.id" :value="user.id" :selected="model.id ? model.user_id : '' ">{{user.name}}</option>
               </select>
             </div>
+            <span v-if="errorMsg.user_id">
+              El campo responsable es requerido.
+            </span>
           </div>
           <!-- Description -->
 
@@ -143,6 +149,8 @@ let model= ref({
   image_url:null
 })
 
+//create errors variable 
+let errorMsg = ref({})
 
 
 //watch to current project data change and when this happens we update local  model
@@ -192,6 +200,11 @@ function saveProject(){
         name:"Projects",
 
       })
+  }).catch((err)=>{
+   
+    errorMsg.value= err.response.data.errors
+
+
   })
 }
 

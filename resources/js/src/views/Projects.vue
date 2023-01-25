@@ -4,9 +4,9 @@
 
     <div v-if="projects.loading" class="flex justify-center">Loading...</div>
     <div v-else>
-    <div class="flex justify-between items-center">
-      <h1>
-      Projects
+    <div class="flex justify-between items-center  pb-5">
+      <h1 class="text-3xl">
+      Lista de proyectos:
     </h1>
         <router-link
         :to="{name: 'ProjectCreate'}"
@@ -16,7 +16,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
 
-        Add new project
+       Agregar nuevo proyecto
         </router-link>
     </div>
 
